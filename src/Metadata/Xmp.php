@@ -1211,6 +1211,10 @@ class Xmp
     public function getDateCreated()
     {
         $date = $this->getAttr('photoshop:DateCreated', self::PHOTOSHOP_NS);
+        
+        if (!$date) {
+            $date = $this->getAttr('xmp:CreateDate', self::PHOTOSHOP_NS);
+        }
 
         if (!$date) {
             return null;
