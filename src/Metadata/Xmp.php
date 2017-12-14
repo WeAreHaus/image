@@ -779,6 +779,24 @@ class Xmp
     {
         return $this->setAlt('dc:rights', $copyright, self::DC_NS);
     }
+    
+    /**
+     * @return string
+     */
+    public function getCopyrightMarked()
+    {
+        return $this->getAttr('xmpRights:Marked', self::XMP_RIGHTS_NS);
+    }
+
+    /**
+     * @param $copyrightUrl string ('True' | 'False')
+     *
+     * @return $this
+     */
+    public function setCopyrightMarked($markedValue)
+    {
+        return $this->setAttr('xmpRights:Marked', $markedValue, self::XMP_RIGHTS_NS);
+    }
 
     /**
      * @return string
