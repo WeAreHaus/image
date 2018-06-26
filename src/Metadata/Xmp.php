@@ -1247,6 +1247,11 @@ class Xmp
                 return \DateTime::createFromFormat('Y-m-d', $date);
         }
 
+        // 2018-04-25T16:01:31.916923392
+        if (strlen($date) > 10) {
+            return \DateTime::createFromFormat('Y-m-d', substr($date, 0, 10));
+        }
+
         return new \DateTime($date);
     }
 
